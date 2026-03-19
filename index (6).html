@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miss Tere — Psicopedagogía | Chicureo · Vitacura · Las Condes</title>
+<meta name="description" content="Psicopedagogía especializada para niños y niñas de 3 a 12 años. Evaluación, diagnóstico e intervención personalizada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --sky:#D6EEFA;--sky-mid:#85C7E8;--sky-dark:#2A7FA8;--sky-text:#0C4D6B;
+  --sun:#FFF6CC;--sun-mid:#FFD966;--sun-dark:#B8860B;--sun-text:#6B4B00;
+  --mint:#E1F5EE;--mint-dark:#0F6E56;--mint-text:#085041;
+  --coral:#FDECEA;--coral-mid:#F28B82;--coral-text:#7D1F1A;
+  --lav:#F0EEFF;--lav-mid:#9B8EC4;--lav-text:#3D2D7A;
+  --white:#fff;--gray:#F7F8FA;--text:#1A1A2E;--muted:#555566;--light:#9999AA;
+  --r:14px;--rs:8px;--shadow:0 4px 20px rgba(0,0,0,0.07);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',Arial,sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.6;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{background:var(--white);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;position:sticky;top:0;z-index:100;border-bottom:1.5px solid #E8F4FB;box-shadow:0 2px 16px rgba(13,77,107,0.08);}
+.nav-logo{font-size:17px;font-weight:800;color:var(--sky-text);display:flex;align-items:center;gap:8px;cursor:pointer;}
+.nav-dot{width:10px;height:10px;border-radius:50%;background:var(--sun-mid);}
+.nav-links{display:flex;gap:2px;}
+.nav-btn{font-size:13px;color:var(--muted);padding:8px 14px;border-radius:var(--rs);transition:all 0.25s;font-weight:600;cursor:pointer;background:none;border:none;font-family:inherit;position:relative;}
+.nav-btn:hover{background:var(--sky);color:var(--sky-text);}
+.nav-btn.active{background:var(--sky);color:var(--sky-text);}
+.nav-btn.active::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:20px;height:3px;background:var(--sky-mid);border-radius:2px;}
+.nav-cta{background:var(--sun-mid);border-radius:var(--rs);padding:10px 20px;font-size:13px;font-weight:800;color:var(--sun-text);cursor:pointer;border:none;font-family:inherit;transition:all 0.25s;}
+.nav-cta:hover{background:var(--sun-dark);color:var(--white);transform:translateY(-1px);}
+
+/* ── TABS ── */
+.tab{display:none;animation:fadeIn 0.35s ease;}
+.tab.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#BEE3F8 0%,#D6EEFA 50%,#EAF6FF 100%);min-height:calc(100vh - 62px);display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero-blob1{position:absolute;top:-100px;right:-100px;width:420px;height:420px;border-radius:50%;background:rgba(255,217,102,0.18);z-index:0;}
+.hero-blob2{position:absolute;bottom:-120px;left:-80px;width:320px;height:320px;border-radius:50%;background:rgba(133,199,232,0.2);z-index:0;}
+.hero-blob3{position:absolute;top:40%;right:30%;width:140px;height:140px;border-radius:50%;background:rgba(225,245,238,0.5);z-index:0;}
+.hero-inner{max-width:960px;margin:0 auto;padding:72px 40px;display:flex;gap:56px;align-items:center;flex-wrap:wrap;position:relative;z-index:1;width:100%;}
+.hero-text{flex:1;min-width:280px;}
+.hero-badge{background:var(--sun);border-radius:20px;padding:7px 18px;font-size:12px;color:var(--sun-text);font-weight:800;display:inline-flex;align-items:center;gap:6px;margin-bottom:22px;box-shadow:0 2px 8px rgba(184,134,11,0.15);}
+.hero-title{font-size:36px;font-weight:800;color:var(--sky-text);line-height:1.2;margin-bottom:18px;}
+.hero-title span{color:var(--sky-dark);border-bottom:4px solid var(--sun-mid);padding-bottom:2px;}
+.hero-sub{font-size:15px;color:var(--sky-dark);line-height:1.9;margin-bottom:32px;max-width:500px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.btn-primary{background:var(--sun-mid);border-radius:var(--rs);padding:14px 24px;font-size:14px;font-weight:800;color:var(--sun-text);cursor:pointer;border:none;font-family:inherit;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;box-shadow:0 4px 14px rgba(184,134,11,0.25);}
+.btn-primary:hover{background:var(--sun-dark);color:var(--white);transform:translateY(-2px);box-shadow:0 6px 20px rgba(184,134,11,0.35);}
+.btn-secondary{background:var(--white);border-radius:var(--rs);padding:14px 24px;font-size:14px;color:var(--sky-text);cursor:pointer;border:2px solid var(--sky-mid);font-weight:700;font-family:inherit;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;}
+.btn-secondary:hover{background:var(--sky);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-stat{background:var(--white);border-radius:var(--r);padding:14px 18px;text-align:center;box-shadow:var(--shadow);flex:1;min-width:90px;transition:all 0.25s;}
+.hero-stat:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1);}
+.hero-stat-num{font-size:22px;font-weight:800;color:var(--sky-text);}
+.hero-stat-label{font-size:11px;color:var(--muted);line-height:1.4;margin-top:2px;}
+.hero-illustration{flex-shrink:0;position:relative;width:320px;}
+
+/* ── SVG ILLUSTRATION ── */
+.illustration-wrap{position:relative;width:320px;height:320px;}
+
+/* ── SECTION STYLES ── */
+.page-hero-band{padding:52px 40px;text-align:center;}
+.page-hero-band.sky{background:linear-gradient(135deg,#C8E8F8,#D6EEFA);}
+.page-hero-band.sun{background:linear-gradient(135deg,#FFF6CC,#FFF0B3);}
+.page-hero-band.dark{background:linear-gradient(135deg,#0C4D6B,#2A7FA8);}
+.page-hero-band.mint{background:linear-gradient(135deg,#C8F0E0,#E1F5EE);}
+.page-hero-band h1{font-size:34px;font-weight:800;margin-bottom:10px;}
+.page-hero-band.sky h1{color:var(--sky-text);}
+.page-hero-band.dark h1{color:var(--white);}
+.page-hero-band.sun h1{color:var(--sun-text);}
+.page-hero-band.mint h1{color:var(--mint-text);}
+.page-hero-band p{font-size:15px;max-width:520px;margin:0 auto;line-height:1.75;}
+.page-hero-band.sky p{color:var(--sky-dark);}
+.page-hero-band.dark p{color:var(--sky-mid);}
+.page-hero-band.sun p{color:var(--sun-dark);}
+.page-hero-band.mint p{color:var(--mint-dark);}
+.page{padding:64px 40px;}
+.page-inner{max-width:920px;margin:0 auto;}
+.section-tag{font-size:11px;font-weight:800;color:var(--sky-dark);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.section-tag::before{content:'';display:block;width:24px;height:3px;background:var(--sky-mid);border-radius:2px;}
+h2{font-size:28px;font-weight:800;color:var(--sky-text);margin-bottom:14px;line-height:1.25;}
+.section-sub{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:32px;max-width:580px;}
+.divider{border:none;border-top:1.5px solid #EEEEEE;margin:44px 0;}
+.info-box{border-radius:var(--r);padding:18px 22px;font-size:14px;line-height:1.75;margin-top:14px;}
+.info-box.sky{background:var(--sky);color:var(--sky-text);}
+.info-box.sun{background:var(--sun);color:var(--sun-text);}
+.info-box.mint{background:var(--mint);color:var(--mint-text);}
+.info-box strong{font-weight:800;}
+.frase-band{background:var(--sun);padding:40px;text-align:center;}
+.frase-band p{font-size:20px;color:var(--sun-text);font-style:italic;line-height:1.7;max-width:640px;margin:0 auto;font-weight:700;}
+.cta-band{background:var(--sky-text);padding:56px 40px;text-align:center;}
+.cta-band-title{font-size:28px;font-weight:800;color:var(--white);margin-bottom:10px;}
+.cta-band-sub{font-size:15px;color:var(--sky-mid);line-height:1.75;margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto;}
+.btn-yellow{background:var(--sun-mid);border-radius:var(--rs);padding:15px 32px;font-size:15px;font-weight:800;color:var(--sun-text);cursor:pointer;border:none;font-family:inherit;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;box-shadow:0 4px 14px rgba(184,134,11,0.3);}
+.btn-yellow:hover{background:var(--sun-dark);color:var(--white);transform:translateY(-2px);}
+
+/* ── CARDS ── */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;}
+.card{background:var(--white);border-radius:var(--r);padding:26px;border:1.5px solid #EEF0F5;transition:all 0.25s;box-shadow:var(--shadow);}
+.card:hover{border-color:var(--sky-mid);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.1);}
+.card.sky{background:var(--sky);border-color:var(--sky-mid);}
+.card.sun{background:var(--sun);border-color:var(--sun-mid);}
+.card.mint{background:var(--mint);border-color:var(--mint-dark);}
+.card.lav{background:var(--lav);border-color:var(--lav-mid);}
+.card-icon{font-size:36px;margin-bottom:14px;display:block;}
+.card-title{font-size:15px;font-weight:800;color:var(--text);margin-bottom:8px;}
+.card.sky .card-title{color:var(--sky-text);}
+.card.sun .card-title{color:var(--sun-text);}
+.card.mint .card-title{color:var(--mint-text);}
+.card.lav .card-title{color:var(--lav-text);}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.7;}
+.card.sky .card-desc{color:var(--sky-dark);}
+.card.sun .card-desc{color:var(--sun-text);}
+
+/* ── PROBLEMS ── */
+.problem-card{background:var(--white);border-radius:var(--r);padding:28px;border:1.5px solid #EEF0F5;transition:all 0.25s;box-shadow:var(--shadow);cursor:default;}
+.problem-card:hover{border-color:var(--sky-mid);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.1);}
+.problem-num{width:36px;height:36px;border-radius:50%;background:var(--sky);color:var(--sky-text);font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+
+/* ── SOBRE MÍ ── */
+.sobre-wrap{display:flex;gap:44px;align-items:flex-start;flex-wrap:wrap;}
+.sobre-left{flex-shrink:0;text-align:center;width:180px;}
+.foto-placeholder{width:180px;height:220px;border-radius:20px;background:linear-gradient(135deg,var(--sky),#B5D8F0);border:4px solid var(--sun-mid);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.foto-placeholder-icon{font-size:48px;margin-bottom:8px;}
+.foto-placeholder-text{font-size:12px;color:var(--sky-text);font-weight:700;text-align:center;padding:0 12px;line-height:1.5;}
+.foto-hint{background:var(--sun);border-radius:var(--rs);padding:8px 12px;font-size:11px;color:var(--sun-text);font-weight:700;text-align:center;margin-bottom:12px;line-height:1.4;}
+.sobre-badges{display:flex;flex-direction:column;gap:7px;}
+.badge{font-size:11px;padding:5px 12px;border-radius:20px;font-weight:700;text-align:center;}
+.badge-sky{background:var(--sky);color:var(--sky-text);}
+.badge-sun{background:var(--sun);color:var(--sun-text);}
+.badge-mint{background:var(--mint);color:var(--mint-dark);}
+.badge-lav{background:var(--lav);color:var(--lav-text);}
+.sobre-content{flex:1;min-width:240px;}
+.sobre-name{font-size:26px;font-weight:800;color:var(--text);margin-bottom:4px;}
+.sobre-role{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
+.sobre-text p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:14px;}
+.aula-box{background:var(--sun);border-radius:var(--r);padding:18px 22px;margin-top:20px;font-size:14px;color:var(--sun-text);line-height:1.75;}
+.aula-box strong{font-weight:800;display:block;margin-bottom:4px;}
+
+/* ── FORMACIÓN ── */
+.formacion-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px;}
+.formacion-card{background:var(--white);border-radius:var(--r);padding:22px;border:2px solid #EEF0F5;box-shadow:var(--shadow);transition:all 0.25s;display:flex;gap:16px;align-items:flex-start;}
+.formacion-card:hover{border-color:var(--sky-mid);transform:translateY(-2px);}
+.formacion-icon-wrap{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.formacion-icon-wrap.sky{background:var(--sky);}
+.formacion-icon-wrap.sun{background:var(--sun);}
+.formacion-icon-wrap.mint{background:var(--mint);}
+.formacion-year{font-size:11px;color:var(--light);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px;}
+.formacion-title{font-size:14px;font-weight:800;color:var(--text);margin-bottom:3px;line-height:1.4;}
+.formacion-uni{font-size:12px;color:var(--sky-dark);font-weight:700;}
+
+/* ── TRAYECTORIA ── */
+.trayectoria{margin-top:8px;}
+.tl-item{display:flex;gap:20px;padding-bottom:28px;}
+.tl-left{display:flex;flex-direction:column;align-items:center;width:20px;flex-shrink:0;}
+.tl-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;}
+.tl-line{width:2px;flex:1;background:#E5E5E5;margin-top:5px;}
+.tl-year{font-size:11px;color:var(--light);margin-bottom:3px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;}
+.tl-title{font-size:15px;font-weight:800;color:var(--text);margin-bottom:5px;}
+.tl-desc{font-size:14px;color:var(--muted);line-height:1.75;}
+.tl-quote{font-size:14px;color:var(--sky-text);font-style:italic;padding:12px 18px;background:var(--sky);border-left:4px solid var(--sky-mid);border-radius:0 var(--rs) var(--rs) 0;margin-top:12px;line-height:1.7;}
+.trabajo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:20px;}
+.trabajo-card{background:var(--white);border-radius:var(--r);padding:22px;border:1.5px solid #EEF0F5;transition:all 0.25s;box-shadow:var(--shadow);}
+.trabajo-card:hover{border-color:var(--sky-mid);transform:translateY(-3px);}
+.cita-final{background:linear-gradient(135deg,var(--mint),#C8F0E0);border-radius:20px;padding:32px 36px;margin-top:36px;text-align:center;}
+.cita-final p{font-size:18px;color:var(--mint-text);font-style:italic;line-height:1.8;font-weight:700;}
+.cita-final .firma{font-size:13px;color:var(--mint-dark);font-weight:800;margin-top:10px;}
+.equipo-band{background:var(--sun);padding:56px 40px;}
+.equipo-inner{max-width:920px;margin:0 auto;}
+.equipo-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:24px;}
+.equipo-item{flex:1;min-width:120px;background:rgba(255,255,255,0.8);border:2px solid var(--sun-mid);border-radius:var(--r);padding:24px 14px;text-align:center;transition:all 0.25s;}
+.equipo-item:hover{background:var(--white);transform:translateY(-3px);box-shadow:var(--shadow);}
+.equipo-icon{font-size:38px;margin-bottom:10px;}
+.equipo-label{font-size:14px;font-weight:800;color:var(--sun-text);}
+.equipo-plus{font-size:28px;color:var(--sun-dark);font-weight:800;}
+
+/* ── SERVICIOS ── */
+.servicio-card{background:var(--white);border:2px solid #EEF0F5;border-radius:20px;padding:30px;transition:all 0.25s;box-shadow:var(--shadow);}
+.servicio-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(0,0,0,0.1);}
+.servicio-card.sky{background:var(--sky);border-color:var(--sky-mid);}
+.servicio-card.sun{background:var(--sun);border-color:var(--sun-mid);}
+.servicio-icon{font-size:42px;margin-bottom:16px;display:block;}
+.servicio-name{font-size:20px;font-weight:800;color:var(--text);margin-bottom:10px;}
+.servicio-card.sky .servicio-name{color:var(--sky-text);}
+.servicio-card.sun .servicio-name{color:var(--sun-text);}
+.servicio-desc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:16px;}
+.servicio-card.sky .servicio-desc{color:var(--sky-dark);}
+.servicio-card.sun .servicio-desc{color:var(--sun-text);}
+.servicio-precio{font-size:24px;font-weight:800;color:var(--sky-text);}
+.servicio-unit{font-size:12px;color:var(--light);margin-top:3px;margin-bottom:16px;}
+.servicio-items{list-style:none;padding:0;border-top:1.5px solid rgba(0,0,0,0.07);padding-top:16px;margin-bottom:16px;}
+.servicio-items li{font-size:13px;color:var(--muted);padding:5px 0;display:flex;gap:10px;line-height:1.5;}
+.servicio-items li::before{content:'✓';color:var(--mint-dark);font-size:13px;flex-shrink:0;margin-top:1px;font-weight:800;}
+.servicio-cta{display:block;text-align:center;background:var(--sky-text);color:var(--white);border-radius:var(--rs);padding:13px;font-size:13px;font-weight:800;cursor:pointer;border:none;font-family:inherit;width:100%;transition:all 0.25s;}
+.servicio-cta:hover{background:var(--sky-dark);transform:translateY(-1px);}
+.proceso-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:20px;}
+.proceso-step{background:var(--white);border:2px solid var(--sky-mid);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);transition:all 0.25s;}
+.proceso-step:hover{transform:translateY(-2px);}
+.proceso-step.highlight{background:var(--mint);border-color:var(--mint-dark);}
+.proceso-num{width:32px;height:32px;border-radius:50%;background:var(--sky);color:var(--sky-text);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.proceso-step.highlight .proceso-num{background:var(--mint-dark);color:var(--white);}
+.proceso-title{font-size:13px;font-weight:800;color:var(--text);margin-bottom:5px;}
+.proceso-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+
+/* ── PRECIOS ── */
+.precio-card{background:var(--white);border:2px solid #EEF0F5;border-radius:20px;padding:26px;transition:all 0.25s;box-shadow:var(--shadow);position:relative;}
+.precio-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,0.1);}
+.precio-card.featured{border-color:var(--sky-mid);border-width:3px;}
+.precio-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--sky-mid);color:var(--sky-text);font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;white-space:nowrap;box-shadow:0 2px 8px rgba(42,127,168,0.2);}
+.precio-icon{font-size:30px;margin-bottom:14px;display:block;}
+.precio-name{font-size:15px;font-weight:800;color:var(--text);margin-bottom:6px;}
+.precio-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px;}
+.precio-num{font-size:30px;font-weight:800;color:var(--sky-text);}
+.precio-unit{font-size:11px;color:var(--light);margin-top:2px;margin-bottom:14px;}
+.precio-includes{list-style:none;padding:0;border-top:1px solid #EEEEEE;padding-top:14px;}
+.precio-includes li{font-size:12px;color:var(--muted);padding:4px 0;display:flex;gap:8px;line-height:1.5;}
+.precio-includes li::before{content:'✓';color:var(--mint-dark);font-size:11px;flex-shrink:0;margin-top:2px;font-weight:800;}
+.faq-item{padding:18px 0;border-bottom:1.5px solid #EEEEEE;cursor:pointer;}
+.faq-item:last-child{border-bottom:none;}
+.faq-header{display:flex;align-items:center;gap:12px;justify-content:space-between;}
+.faq-q{font-size:15px;font-weight:800;color:var(--text);display:flex;align-items:center;gap:11px;}
+.faq-ico{width:24px;height:24px;border-radius:50%;background:var(--sky);color:var(--sky-text);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.faq-arrow{font-size:18px;color:var(--sky-dark);transition:transform 0.25s;flex-shrink:0;}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.8;padding-left:35px;padding-top:8px;display:none;}
+.faq-item.open .faq-a{display:block;}
+
+/* ── CONTACTO ── */
+.contacto-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:40px;}
+.contacto-card{background:var(--white);border-radius:20px;padding:28px;border:2px solid #EEF0F5;box-shadow:var(--shadow);transition:all 0.25s;}
+.contacto-card:hover{border-color:var(--sky-mid);transform:translateY(-3px);}
+.contacto-icon{font-size:36px;margin-bottom:14px;display:block;}
+.contacto-label{font-size:18px;font-weight:800;color:var(--text);margin-bottom:8px;}
+.contacto-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:14px;}
+.contacto-tel{font-size:18px;font-weight:800;color:var(--sky-text);margin-bottom:14px;}
+.btn-wa{background:#25D366;border-radius:var(--rs);padding:13px 20px;font-size:14px;font-weight:800;color:var(--white);cursor:pointer;border:none;font-family:inherit;display:inline-flex;align-items:center;gap:10px;transition:all 0.25s;width:100%;justify-content:center;text-decoration:none;}
+.btn-wa:hover{background:#1EB857;transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,211,102,0.35);}
+.btn-sky{background:var(--sky-text);border-radius:var(--rs);padding:13px 20px;font-size:14px;font-weight:800;color:var(--white);cursor:pointer;border:none;font-family:inherit;display:inline-flex;align-items:center;gap:10px;transition:all 0.25s;width:100%;justify-content:center;text-decoration:none;}
+.btn-sky:hover{background:var(--sky-dark);transform:translateY(-1px);}
+.ubicacion-item{background:var(--sky);border-radius:var(--rs);padding:12px 16px;border-left:4px solid var(--sky-mid);margin-bottom:8px;transition:all 0.2s;}
+.ubicacion-item:hover{background:var(--sky-mid);}
+.ubicacion-title{font-size:13px;font-weight:800;color:var(--sky-text);margin-bottom:2px;}
+.ubicacion-desc{font-size:12px;color:var(--sky-dark);line-height:1.5;}
+.form-wrap{background:var(--gray);border-radius:20px;padding:32px;margin-top:36px;}
+.form-title{font-size:20px;font-weight:800;color:var(--text);margin-bottom:6px;}
+.form-desc{font-size:14px;color:var(--muted);margin-bottom:22px;line-height:1.6;}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group.full{grid-column:1/-1;}
+.form-label{font-size:12px;font-weight:800;color:var(--sky-dark);text-transform:uppercase;letter-spacing:0.06em;}
+.form-input{background:var(--white);border:1.5px solid #DDE0E8;border-radius:var(--rs);padding:12px 16px;font-size:14px;color:var(--text);font-family:inherit;transition:all 0.2s;outline:none;}
+.form-input:focus{border-color:var(--sky-mid);box-shadow:0 0 0 3px rgba(133,199,232,0.2);}
+textarea.form-input{resize:vertical;min-height:110px;}
+.form-submit{background:var(--sun-mid);border-radius:var(--rs);padding:14px 32px;font-size:15px;font-weight:800;color:var(--sun-text);border:none;cursor:pointer;font-family:inherit;transition:all 0.25s;margin-top:8px;box-shadow:0 4px 14px rgba(184,134,11,0.25);}
+.form-submit:hover{background:var(--sun-dark);color:var(--white);transform:translateY(-1px);}
+
+/* ── FOOTER ── */
+footer{background:#0A3A52;padding:44px 40px;}
+.footer-inner{max-width:920px;margin:0 auto;display:flex;gap:36px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;}
+.footer-logo{font-size:17px;font-weight:800;color:var(--sky);margin-bottom:8px;}
+.footer-frase{font-size:13px;color:var(--sky-mid);font-style:italic;line-height:1.7;max-width:280px;margin-bottom:4px;}
+.footer-firma{font-size:12px;color:rgba(133,199,232,0.5);margin-top:4px;}
+.footer-links-title{font-size:11px;font-weight:800;color:var(--sky-mid);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;}
+.footer-links{display:flex;flex-direction:column;gap:7px;}
+.footer-links a{font-size:13px;color:rgba(133,199,232,0.7);text-decoration:none;cursor:pointer;transition:color 0.2s;}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{max-width:920px;margin:24px auto 0;padding-top:18px;border-top:1px solid rgba(133,199,232,0.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.footer-bottom p{font-size:12px;color:rgba(133,199,232,0.4);}
+
+@media(max-width:640px){
+  nav{padding:12px 20px;}
+  .nav-links{gap:0;}
+  .nav-btn{padding:7px 9px;font-size:12px;}
+  .hero-inner{padding:52px 24px;gap:32px;}
+  .hero-title{font-size:26px;}
+  .hero-illustration{width:100%;height:200px;}
+  .page{padding:48px 24px;}
+  .page-hero-band{padding:40px 24px;}
+  .page-hero-band h1{font-size:26px;}
+  .equipo-band,.cta-band{padding:48px 24px;}
+  footer{padding:36px 24px;}
+  .frase-band{padding:28px 24px;}
+  .frase-band p{font-size:16px;}
+  .hero-btns{flex-direction:column;}
+  .sobre-wrap{flex-direction:column;align-items:center;}
+  .sobre-left{width:100%;display:flex;flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo" onclick="showTab('inicio')"><div class="nav-dot"></div>Miss Tere Psicopedagogía</div>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="showTab('inicio')">🏠 Inicio</button>
+    <button class="nav-btn" onclick="showTab('sobre-mi')">👩‍🏫 Sobre mí</button>
+    <button class="nav-btn" onclick="showTab('servicios')">🌱 Servicios</button>
+    <button class="nav-btn" onclick="showTab('precios')">💛 Precios</button>
+    <button class="nav-btn" onclick="showTab('contacto')">📩 Contacto</button>
+  </div>
+  <button class="nav-cta" onclick="showTab('contacto')">📅 Agendar hora</button>
+</nav>
+
+<!-- ══ INICIO ══ -->
+<div id="tab-inicio" class="tab active">
+  <div class="hero">
+    <div class="hero-blob1"></div><div class="hero-blob2"></div><div class="hero-blob3"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">📍 Chicureo · Vitacura · Las Condes</div>
+        <div class="hero-title">¿Tu hijo/a tiene dificultades<br>para aprender y <span>no sabes por qué?</span></div>
+        <p class="hero-sub">Soy psicopedagoga y profesora. Evalúo, diagnostico e intervengo con un plan personalizado — porque cada niño/a es distinto/a y necesita un proceso de aprendizaje distinto.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showTab('contacto')">📅 Agenda una hora gratis</button>
+          <button class="btn-secondary" onclick="showTab('servicios')">Ver servicios →</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-num">+5</div><div class="hero-stat-label">años con niños/as</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">3–12</div><div class="hero-stat-label">años de edad</div></div>
+          <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">personalizado</div></div>
+        </div>
+      </div>
+      <div class="hero-illustration">
+        <svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;border-radius:20px;">
+<style>
+  .room-bg{fill:#FFF8EE}.wall{fill:#FDE8C8}.floor{fill:#E8D5B0}.rug{fill:#D6EEFA}.table-top{fill:#D4956A}.table-leg{fill:#B87040}.chair{fill:#85C7E8}.chair-dark{fill:#5CA8CC}.skin-1{fill:#FDBCAA}.skin-2{fill:#C8855A}.skin-3{fill:#F4D6C0}.skin-4{fill:#E8A878}.hair-dark{fill:#2C1A0E}.hair-brown{fill:#6B3A1F}.hair-yellow{fill:#FFD966}.hair-red{fill:#C04A20}.shirt-blue{fill:#4A9FD4}.shirt-yellow{fill:#FFD966}.shirt-green{fill:#5CB85C}.shirt-pink{fill:#F28B82}.shirt-orange{fill:#F5A623}.pants-navy{fill:#2C4A7A}.pants-red{fill:#D64040}.pants-gray{fill:#888888}.block-red{fill:#E84040}.block-blue{fill:#4A9FD4}.block-yellow{fill:#FFD966}.block-green{fill:#5CB85C}.paper{fill:#FFFEF0;stroke:#DDD;stroke-width:1}.crayon-red{fill:#E84040}.crayon-blue{fill:#4A9FD4}.window-frame{fill:#A0C4DE}.window-glass{fill:#E8F6FF}.bookshelf{fill:#C4844A}.book1{fill:#E84040}.book2{fill:#4A9FD4}.book3{fill:#5CB85C}.book4{fill:#9B59B6}.book5{fill:#F5A623}.teddy{fill:#C8855A}.eye{fill:#2C1A0E}.mouth{fill:none;stroke:#555;stroke-width:1.5;stroke-linecap:round}.cheek{fill:#F28B82;opacity:0.5}.plant-pot{fill:#C04A20}.plant-leaf{fill:#5CB85C}.clock-bg{fill:white;stroke:#AAA;stroke-width:2}.banner{fill:#FFD966}.banner-string{stroke:#B8860B;stroke-width:1.5;fill:none}
+</style>
+<rect class="wall" x="0" y="0" width="680" height="290"/>
+<rect class="floor" x="0" y="290" width="680" height="130"/>
+<rect class="rug" x="80" y="270" width="380" height="130" rx="12"/>
+<rect class="window-frame" x="30" y="40" width="100" height="110" rx="6"/>
+<rect class="window-glass" x="38" y="48" width="84" height="94" rx="4"/>
+<line x1="80" y1="48" x2="80" y2="142" stroke="#A0C4DE" stroke-width="2"/>
+<line x1="38" y1="95" x2="122" y2="95" stroke="#A0C4DE" stroke-width="2"/>
+<circle cx="64" cy="72" r="12" fill="#FFD966" opacity="0.8"/>
+<line x1="64" y1="55" x2="64" y2="48" stroke="#FFD966" stroke-width="2"/>
+<line x1="64" y1="89" x2="64" y2="96" stroke="#FFD966" stroke-width="2"/>
+<line x1="47" y1="72" x2="40" y2="72" stroke="#FFD966" stroke-width="2"/>
+<line x1="81" y1="72" x2="88" y2="72" stroke="#FFD966" stroke-width="2"/>
+<rect x="200" y="20" width="240" height="130" rx="8" fill="#5A8A6A"/>
+<rect x="208" y="28" width="224" height="114" rx="4" fill="#4A7A5A"/>
+<rect x="196" y="155" width="248" height="10" rx="3" fill="#8B6030"/>
+<circle cx="240" cy="90" r="18" fill="none" stroke="#B5D4C4" stroke-width="2"/>
+<circle cx="240" cy="90" r="10" fill="#FFD966" opacity="0.7"/>
+<line x1="258" y1="72" x2="270" y2="60" stroke="#B5D4C4" stroke-width="2"/>
+<line x1="270" y1="60" x2="300" y2="65" stroke="#B5D4C4" stroke-width="1.5"/>
+<text x="210" y="50" font-size="10" fill="#B5D4C4" font-family="Arial">A B C D E F G</text>
+<text x="210" y="65" font-size="10" fill="#B5D4C4" font-family="Arial">1  2  3  4  5</text>
+<text x="298" y="92" font-size="11" fill="#B5D4C4" font-family="Arial">3+2=5</text>
+<circle cx="590" cy="75" r="34" class="clock-bg"/>
+<circle cx="590" cy="75" r="30" fill="white"/>
+<line x1="590" y1="75" x2="590" y2="57" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+<line x1="590" y1="75" x2="604" y2="75" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+<rect class="bookshelf" x="595" y="150" width="75" height="140" rx="4"/>
+<rect class="bookshelf" x="595" y="200" width="75" height="5"/>
+<rect class="book1" x="600" y="155" width="12" height="42" rx="2"/>
+<rect class="book2" x="614" y="158" width="10" height="39" rx="2"/>
+<rect class="book3" x="626" y="155" width="14" height="42" rx="2"/>
+<rect class="book4" x="642" y="157" width="11" height="40" rx="2"/>
+<rect class="book5" x="655" y="155" width="12" height="42" rx="2"/>
+<rect class="book2" x="600" y="207" width="13" height="40" rx="2"/>
+<rect class="book1" x="615" y="209" width="10" height="38" rx="2"/>
+<rect class="book3" x="627" y="207" width="12" height="40" rx="2"/>
+<circle class="teddy" cx="625" cy="272" r="14"/>
+<circle class="teddy" cx="616" cy="262" r="8"/>
+<circle class="teddy" cx="634" cy="262" r="8"/>
+<circle cx="622" cy="261" r="2" class="eye"/>
+<circle cx="630" cy="261" r="2" class="eye"/>
+<path d="M622 266 Q626 270 630 266" class="mouth"/>
+<rect class="plant-pot" x="150" y="235" width="28" height="30" rx="4"/>
+<ellipse class="plant-leaf" cx="164" cy="232" rx="12" ry="8" transform="rotate(-20 164 232)"/>
+<ellipse class="plant-leaf" cx="164" cy="220" rx="10" ry="7"/>
+<ellipse class="plant-leaf" cx="155" cy="225" rx="9" ry="6" transform="rotate(-35 155 225)"/>
+<path d="M180 15 Q340 25 500 15" class="banner-string"/>
+<polygon points="195,15 208,15 201,28" fill="#E84040"/>
+<polygon points="215,17 228,17 221,30" fill="#4A9FD4"/>
+<polygon points="235,18 248,18 241,31" fill="#5CB85C"/>
+<polygon points="255,18 268,18 261,31" fill="#FFD966"/>
+<polygon points="275,17 288,17 281,30" fill="#F28B82"/>
+<polygon points="295,17 308,17 301,30" fill="#9B59B6"/>
+<polygon points="315,17 328,17 321,30" fill="#E84040"/>
+<polygon points="335,18 348,18 341,31" fill="#4A9FD4"/>
+<polygon points="355,18 368,18 361,31" fill="#5CB85C"/>
+<polygon points="375,17 388,17 381,30" fill="#FFD966"/>
+<polygon points="395,17 408,17 401,30" fill="#F28B82"/>
+<polygon points="415,18 428,18 421,31" fill="#9B59B6"/>
+<polygon points="435,17 448,17 441,30" fill="#E84040"/>
+<polygon points="455,17 468,17 461,30" fill="#4A9FD4"/>
+<polygon points="475,17 488,17 481,30" fill="#5CB85C"/>
+<rect class="table-top" x="230" y="215" width="200" height="16" rx="6"/>
+<rect class="table-leg" x="248" y="231" width="12" height="50" rx="4"/>
+<rect class="table-leg" x="400" y="231" width="12" height="50" rx="4"/>
+<rect class="chair" x="205" y="240" width="50" height="8" rx="4"/>
+<rect class="chair-dark" x="213" y="248" width="8" height="35" rx="3"/>
+<rect class="chair-dark" x="239" y="248" width="8" height="35" rx="3"/>
+<rect class="chair" x="205" y="225" width="50" height="38" rx="4"/>
+<rect class="chair" x="407" y="240" width="50" height="8" rx="4"/>
+<rect class="chair-dark" x="415" y="248" width="8" height="35" rx="3"/>
+<rect class="chair-dark" x="441" y="248" width="8" height="35" rx="3"/>
+<rect class="chair" x="407" y="225" width="50" height="38" rx="4"/>
+<rect class="paper" x="260" y="200" width="55" height="40" rx="3"/>
+<line x1="268" y1="212" x2="307" y2="212" stroke="#DDD" stroke-width="1"/>
+<line x1="268" y1="220" x2="307" y2="220" stroke="#DDD" stroke-width="1"/>
+<rect class="paper" x="345" y="200" width="55" height="40" rx="3"/>
+<circle cx="365" cy="215" r="8" fill="none" stroke="#F28B82" stroke-width="2"/>
+<path d="M358 225 L365 220 L372 225" fill="#FFD966"/>
+<rect class="crayon-red" x="250" y="203" width="5" height="22" rx="2"/>
+<rect class="crayon-blue" x="243" y="205" width="5" height="20" rx="2"/>
+<rect class="pants-navy" x="213" y="285" width="30" height="40" rx="8"/>
+<rect class="shirt-pink" x="210" y="250" width="36" height="42" rx="10"/>
+<circle class="skin-3" cx="228" cy="238" r="20"/>
+<ellipse class="hair-yellow" cx="228" cy="226" rx="17" ry="10"/>
+<ellipse class="hair-yellow" cx="215" cy="234" rx="7" ry="12"/>
+<ellipse class="hair-yellow" cx="241" cy="234" rx="7" ry="12"/>
+<circle class="eye" cx="222" cy="237" r="2.5"/>
+<circle class="eye" cx="234" cy="237" r="2.5"/>
+<circle cx="219" cy="244" r="3" class="cheek"/>
+<circle cx="237" cy="244" r="3" class="cheek"/>
+<path d="M223 244 Q228 249 233 244" class="mouth"/>
+<line x1="210" y1="268" x2="196" y2="215" stroke="#FDBCAA" stroke-width="9" stroke-linecap="round"/>
+<line x1="246" y1="268" x2="259" y2="215" stroke="#FDBCAA" stroke-width="9" stroke-linecap="round"/>
+<circle class="skin-3" cx="259" cy="213" r="7"/>
+<rect class="pants-red" x="417" y="285" width="30" height="40" rx="8"/>
+<rect class="shirt-blue" x="414" y="250" width="36" height="42" rx="10"/>
+<circle class="skin-1" cx="432" cy="238" r="20"/>
+<ellipse class="hair-dark" cx="432" cy="225" rx="16" ry="9"/>
+<circle class="eye" cx="426" cy="237" r="2.5"/>
+<circle class="eye" cx="438" cy="237" r="2.5"/>
+<circle cx="423" cy="244" r="3" class="cheek"/>
+<circle cx="441" cy="244" r="3" class="cheek"/>
+<path d="M427 244 Q432 250 437 244" class="mouth"/>
+<line x1="414" y1="268" x2="400" y2="215" stroke="#FDBCAA" stroke-width="9" stroke-linecap="round"/>
+<line x1="450" y1="268" x2="464" y2="215" stroke="#FDBCAA" stroke-width="9" stroke-linecap="round"/>
+<circle class="skin-1" cx="403" cy="213" r="7"/>
+<ellipse class="pants-gray" cx="105" cy="385" rx="22" ry="16"/>
+<rect class="shirt-green" x="84" y="335" width="42" height="50" rx="12"/>
+<circle class="skin-2" cx="105" cy="320" r="22"/>
+<ellipse class="hair-dark" cx="105" cy="307" rx="18" ry="10"/>
+<ellipse class="hair-dark" cx="90" cy="315" rx="8" ry="14"/>
+<ellipse class="hair-dark" cx="120" cy="315" rx="8" ry="14"/>
+<circle class="eye" cx="98" cy="319" r="2.5"/>
+<circle class="eye" cx="112" cy="319" r="2.5"/>
+<circle cx="95" cy="326" r="3" class="cheek"/>
+<circle cx="115" cy="326" r="3" class="cheek"/>
+<path d="M99 327 Q105 333 111 327" class="mouth"/>
+<line x1="84" y1="355" x2="60" y2="390" stroke="#C8855A" stroke-width="10" stroke-linecap="round"/>
+<line x1="126" y1="355" x2="150" y2="375" stroke="#C8855A" stroke-width="10" stroke-linecap="round"/>
+<circle class="skin-2" cx="152" cy="373" r="9"/>
+<rect class="block-red" x="60" y="380" width="22" height="22" rx="3"/>
+<rect class="block-yellow" x="85" y="382" width="18" height="18" rx="3"/>
+<rect class="block-blue" x="50" y="358" width="18" height="18" rx="3"/>
+<polygon points="60,358 71,342 82,358" fill="#E84040"/>
+<ellipse class="pants-navy" cx="535" cy="385" rx="22" ry="16"/>
+<rect class="shirt-yellow" x="514" y="335" width="42" height="50" rx="12"/>
+<circle class="skin-4" cx="535" cy="320" r="22"/>
+<ellipse class="hair-red" cx="535" cy="307" rx="18" ry="10"/>
+<ellipse class="hair-red" cx="520" cy="316" rx="7" ry="12"/>
+<ellipse class="hair-red" cx="550" cy="316" rx="7" ry="12"/>
+<circle class="eye" cx="528" cy="319" r="2.5"/>
+<circle class="eye" cx="542" cy="319" r="2.5"/>
+<circle cx="525" cy="326" r="3" class="cheek"/>
+<circle cx="545" cy="326" r="3" class="cheek"/>
+<path d="M529 327 Q535 333 541 327" class="mouth"/>
+<line x1="514" y1="355" x2="490" y2="378" stroke="#E8A878" stroke-width="10" stroke-linecap="round"/>
+<line x1="556" y1="355" x2="570" y2="390" stroke="#E8A878" stroke-width="10" stroke-linecap="round"/>
+<circle class="skin-4" cx="489" cy="376" r="9"/>
+<rect x="540" y="378" width="42" height="24" rx="6" fill="#E84040"/>
+<rect x="548" y="370" width="26" height="16" rx="5" fill="#F28B82"/>
+<circle cx="548" cy="403" r="7" fill="#333"/>
+<circle cx="548" cy="403" r="4" fill="#888"/>
+<circle cx="574" cy="403" r="7" fill="#333"/>
+<circle cx="574" cy="403" r="4" fill="#888"/>
+<polygon points="170,80 174,70 178,80 168,74 180,74" fill="#FFD966" opacity="0.8"/>
+<polygon points="530,100 534,90 538,100 528,94 540,94" fill="#F28B82" opacity="0.8"/>
+<polygon points="555,55 558,47 561,55 553,50 563,50" fill="#5CB85C" opacity="0.8"/>
+<circle cx="185" cy="110" r="5" fill="#4A9FD4" opacity="0.6"/>
+<circle cx="520" cy="140" r="4" fill="#FFD966" opacity="0.6"/>
+</svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="frase-band">
+    <p>"Porque cada niño/a es distinto/a y necesita un proceso de aprendizaje distinto."</p>
+  </div>
+
+  <div class="page">
+    <div class="page-inner">
+      <div class="section-tag">El problema que resuelvo</div>
+      <h2>¿Te suena algo de esto?</h2>
+      <p class="section-sub">Si tu hijo/a vive alguna de estas situaciones, puedo ayudarte a encontrar la causa real y trabajarla.</p>
+      <div class="grid-3" style="margin-bottom:36px;">
+        <div class="problem-card card"><div class="problem-num">1</div><span class="card-icon">📖</span><div class="card-title">Le cuesta leer o entender lo que lee</div><p class="card-desc">No es falta de esfuerzo. Puede haber una causa específica que con la evaluación correcta se puede identificar y trabajar.</p></div>
+        <div class="problem-card card"><div class="problem-num">2</div><span class="card-icon">🔢</span><div class="card-title">Las matemáticas se sienten como un muro</div><p class="card-desc">Muchas veces el problema no es el número — es cómo el cerebro procesa la información. Eso tiene solución.</p></div>
+        <div class="problem-card card"><div class="problem-num">3</div><span class="card-icon">💭</span><div class="card-title">Se distrae, se frustra, no termina tareas</div><p class="card-desc">Las funciones ejecutivas se pueden fortalecer. Con las estrategias adecuadas, los cambios son visibles y sostenibles.</p></div>
+      </div>
+      <div style="background:var(--sky);border-radius:20px;padding:32px 36px;">
+        <div style="font-size:22px;font-weight:800;color:var(--sky-text);margin-bottom:12px;">Esto no es reforzamiento escolar.</div>
+        <p style="font-size:14px;color:var(--sky-dark);line-height:1.8;margin-bottom:24px;">Las clases particulares enseñan contenido. Yo busco la raíz: por qué a tu hijo/a le cuesta aprender, cómo procesa la información, qué fortalezas tiene. Desde ahí construimos un plan real.</p>
+        <div class="proceso-steps">
+          <div class="proceso-step"><div class="proceso-num">1</div><div class="proceso-title">🔍 Evaluación</div><p class="proceso-desc">Causas reales con instrumentos formales.</p></div>
+          <div class="proceso-step"><div class="proceso-num">2</div><div class="proceso-title">📋 Diagnóstico</div><p class="proceso-desc">Informe + reunión con los papás.</p></div>
+          <div class="proceso-step"><div class="proceso-num">3</div><div class="proceso-title">📝 Plan personalizado</div><p class="proceso-desc">Para este/a niño/a — no una plantilla.</p></div>
+          <div class="proceso-step"><div class="proceso-num">4</div><div class="proceso-title">🌱 Intervención</div><p class="proceso-desc">Sesiones que se ajustan al avance real.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="cta-band-title">¿Quieres saber si esto es para tu hijo/a?</div>
+    <p class="cta-band-sub">La primera sesión informativa es gratuita y sin compromiso. Solo 15 minutos para conversarlo.</p>
+    <button class="btn-yellow" onclick="showTab('contacto')">📅 Agenda tu sesión informativa gratis</button>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-logo">Miss Tere Psicopedagogía</div><p class="footer-frase">"Aprender es un camino distinto para cada uno/a. Acompaño ese camino con dedicación y cariño."</p><p class="footer-firma">— Miss Tere · Chicureo · Vitacura · Las Condes</p></div>
+      <div><div class="footer-links-title">Páginas</div><div class="footer-links"><a onclick="showTab('inicio')">🏠 Inicio</a><a onclick="showTab('sobre-mi')">👩‍🏫 Sobre mí</a><a onclick="showTab('servicios')">🌱 Servicios</a><a onclick="showTab('precios')">💛 Precios</a><a onclick="showTab('contacto')">📩 Contacto</a></div></div>
+      <div><div class="footer-links-title">Contacto</div><div class="footer-links"><a href="https://wa.me/56973306902" target="_blank">💬 WhatsApp</a><a href="mailto:tere.lorca14@gmail.com">✉️ Email</a><a onclick="showTab('contacto')">📅 Agendar hora</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Miss Tere Psicopedagogía</p><p>Hecho con ❤️ para los niños/as</p></div>
+  </footer>
+</div>
+
+<!-- ══ SOBRE MÍ ══ -->
+<div id="tab-sobre-mi" class="tab">
+  <div class="page-hero-band sky">
+    <div class="section-tag" style="justify-content:center;">👩‍🏫 Sobre mí</div>
+    <h1>Hola, soy Miss Tere 👋</h1>
+    <p>Profesora de Educación Básica y Psicopedagoga. Combino el aula con la intervención personalizada.</p>
+  </div>
+  <div class="page">
+    <div class="page-inner">
+      <div class="sobre-wrap">
+        <div class="sobre-left">
+          <img src="data:image/png;base64,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" 
+            alt="Miss Tere — Psicopedagoga" 
+            style="width:180px;height:220px;border-radius:20px;object-fit:cover;object-position:center top;border:4px solid #FFD966;box-shadow:0 8px 24px rgba(0,0,0,0.12);display:block;margin-bottom:14px;"/>
+          <div class="sobre-badges">
+            <span class="badge badge-sky">+5 años de exp.</span>
+            <span class="badge badge-sun">Magíster 2024</span>
+            <span class="badge badge-mint">Profesora activa</span>
+            <span class="badge badge-lav">U. de los Andes</span>
+          </div>
+        </div>
+        <div class="sobre-content">
+          <div class="sobre-name">Teresita Lorca</div>
+          <div class="sobre-role">Profesora de Educación Básica · Magíster en Psicopedagogía (2024) · Psicopedagoga independiente</div>
+          <div class="sobre-text">
+            <p>Llevo años trabajando con niños/as y desde el año pasado me especializo completamente en psicopedagogía. Hoy combino mi trabajo como profesora en colegio con la práctica independiente — eso me permite ver el aprendizaje desde adentro del aula y también desde la intervención personalizada.</p>
+            <p>Todo empezó viendo niños/as que se esforzaban enormemente pero tenían una barrera que no los dejaba lograrlo. No era falta de capacidad ni de ganas — era algo específico que estaba en el camino y que, con el apoyo correcto, se puede trabajar y superar.</p>
+            <p>Estoy convencida de que todos los niños/as necesitan al menos una mirada psicopedagógica para potenciar su máximo potencial. No solo los que tienen dificultades.</p>
+          </div>
+          <div class="aula-box"><strong>🏫 ¿Por qué importa que siga en el aula?</strong>Porque entiendo lo que vive tu hijo/a cada día en clases — y eso hace que el trabajo psicopedagógico sea mucho más preciso y conectado con su realidad escolar.</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="section-tag">🎓 Formación académica</div>
+      <h2 style="margin-bottom:20px;">Estudios</h2>
+      <div class="formacion-grid">
+        <div class="formacion-card">
+          <div class="formacion-icon-wrap sky">🎓</div>
+          <div>
+            <div class="formacion-year">Pregrado</div>
+            <div class="formacion-title">Pedagogía General Básica</div>
+            <div class="formacion-uni">Universidad de los Andes</div>
+          </div>
+        </div>
+        <div class="formacion-card">
+          <div class="formacion-icon-wrap sun">📚</div>
+          <div>
+            <div class="formacion-year">Diplomado</div>
+            <div class="formacion-title">Necesidades Educativas Especiales</div>
+            <div class="formacion-uni">Universidad de los Andes</div>
+          </div>
+        </div>
+        <div class="formacion-card">
+          <div class="formacion-icon-wrap mint">🧠</div>
+          <div>
+            <div class="formacion-year">Postgrado · 2024</div>
+            <div class="formacion-title">Magíster en Psicopedagogía</div>
+            <div class="formacion-uni">Universidad de los Andes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="section-tag">📅 Mi trayectoria</div>
+      <div class="trayectoria">
+        <div class="tl-item"><div class="tl-left"><div class="tl-dot" style="background:#9FE1CB;"></div><div class="tl-line"></div></div><div><div class="tl-year">Desde la universidad</div><div class="tl-title">👩‍🏫 Profesora y clases particulares</div><p class="tl-desc">Empecé a trabajar con niños/as desde que comencé a estudiar pedagogía. Ahí aprendí a leer cómo aprende cada uno/a.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-dot" style="background:#5DCAA5;"></div><div class="tl-line"></div></div><div><div class="tl-year">Hace 3 años — en el aula cada día</div><div class="tl-title">💡 La observación que lo cambió todo</div><p class="tl-desc">Todos los días veía niños/as que se esforzaban enormemente pero tenían una barrera que no los dejaba lograrlo.</p><div class="tl-quote">"No era falta de capacidad ni de ganas — era algo específico que estaba en el camino y que, con el apoyo correcto, se puede trabajar y superar."</div></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-line"></div></div><div><div class="tl-year">Magíster en Psicopedagogía (2024)</div><div class="tl-title">🧠 La especialización que faltaba</div><p class="tl-desc">Para tener las herramientas formales que permitan evaluar, diagnosticar e intervenir con rigor. Porque la intuición no es suficiente — se necesita método.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-dot" style="background:#085041;"></div></div><div><div class="tl-year">Desde 2025 — hoy</div><div class="tl-title">🌱 Psicopedagoga independiente</div><p class="tl-desc">Con el Magíster terminado, trabajo de forma independiente con el tiempo y la profundidad que cada niño/a merece.</p></div></div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="section-tag">✨ Cómo trabajo</div>
+      <h2 style="margin-bottom:6px;">Mis sesiones no son aburridas.</h2>
+      <p style="font-size:15px;color:var(--muted);margin-bottom:22px;">El aprendizaje y la entretención van de la mano — siempre.</p>
+      <div class="trabajo-grid">
+        <div class="trabajo-card card"><span class="card-icon">🎲</span><div class="card-title">Con juego y actividades didácticas</div><p class="card-desc">Usamos juegos, materiales concretos y actividades pensadas para que el aprendizaje ocurra casi sin darse cuenta.</p></div>
+        <div class="trabajo-card card"><span class="card-icon">🌱</span><div class="card-title">Con calma y sin apuros</div><p class="card-desc">Cada niño/a tiene su propio ritmo. Acá no hay presión ni comparaciones. El avance se mide contra uno/a mismo/a.</p></div>
+        <div class="trabajo-card card"><span class="card-icon">😄</span><div class="card-title">Con humor y liviandad</div><p class="card-desc">Si nos reímos en la sesión, vamos por buen camino. La confianza se construye también con una buena carcajada.</p></div>
+        <div class="trabajo-card card"><span class="card-icon">💪</span><div class="card-title">Exigente, siempre acompañando</div><p class="card-desc">Sí les pido que se esfuercen — pero nunca solos/as. Siempre con Miss Tere al lado.</p></div>
+      </div>
+      <div class="cita-final"><p>"Si algo me ha enseñado este trabajo es que no existe el/la niño/a que no puede. Existen los que todavía no han encontrado su manera de aprender."</p><div class="firma">— Miss Tere</div></div>
+    </div>
+  </div>
+  <div class="equipo-band">
+    <div class="equipo-inner">
+      <div class="section-tag" style="color:var(--sun-dark);">🤝 Trabajo colaborativo</div>
+      <h2 style="color:var(--sun-text);margin-bottom:10px;">Un proceso que funciona en equipo</h2>
+      <p style="font-size:14px;color:var(--sun-text);line-height:1.8;max-width:580px;">Para sacar lo mejor de cada niño/a se necesitan tres: la psicopedagoga, los apoderados y el colegio. Trabajo de forma colaborativa con la familia y el establecimiento — porque el aprendizaje no ocurre solo en la sesión.</p>
+      <div class="equipo-row">
+        <div class="equipo-item"><div class="equipo-icon">👩‍⚕️</div><div class="equipo-label">Psicopedagoga</div></div>
+        <div class="equipo-plus">+</div>
+        <div class="equipo-item"><div class="equipo-icon">👨‍👩‍👧</div><div class="equipo-label">Apoderados</div></div>
+        <div class="equipo-plus">+</div>
+        <div class="equipo-item"><div class="equipo-icon">🏫</div><div class="equipo-label">Colegio</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-band">
+    <div class="cta-band-title">¿Quieres conocerme primero?</div>
+    <p class="cta-band-sub">La sesión informativa es gratuita, dura 15 minutos y no implica ningún compromiso.</p>
+    <button class="btn-yellow" onclick="showTab('contacto')">📅 Agenda tu sesión informativa gratis</button>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-logo">Miss Tere Psicopedagogía</div><p class="footer-frase">"Aprender es un camino distinto para cada uno/a."</p><p class="footer-firma">— Miss Tere · Chicureo · Vitacura · Las Condes</p></div>
+      <div><div class="footer-links-title">Páginas</div><div class="footer-links"><a onclick="showTab('inicio')">🏠 Inicio</a><a onclick="showTab('sobre-mi')">👩‍🏫 Sobre mí</a><a onclick="showTab('servicios')">🌱 Servicios</a><a onclick="showTab('precios')">💛 Precios</a><a onclick="showTab('contacto')">📩 Contacto</a></div></div>
+      <div><div class="footer-links-title">Contacto</div><div class="footer-links"><a href="https://wa.me/56973306902" target="_blank">💬 WhatsApp</a><a href="mailto:tere.lorca14@gmail.com">✉️ Email</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Miss Tere Psicopedagogía</p><p>Hecho con ❤️</p></div>
+  </footer>
+</div>
+
+<!-- ══ SERVICIOS ══ -->
+<div id="tab-servicios" class="tab">
+  <div class="page-hero-band mint">
+    <div class="section-tag" style="justify-content:center;color:var(--mint-dark);">🌱 Servicios</div>
+    <h1>¿Cómo puedo ayudarte?</h1>
+    <p>Todo proceso comienza con una evaluación. Desde ahí, diseño un plan personalizado para cada niño/a.</p>
+  </div>
+  <div class="page">
+    <div class="page-inner">
+      <div class="grid-3" style="margin-bottom:52px;">
+        <div class="servicio-card sky">
+          <span class="servicio-icon">🔍</span>
+          <div class="servicio-name">Evaluación psicopedagógica</div>
+          <p class="servicio-desc">El punto de partida de todo proceso. Identificamos las causas reales con instrumentos formales seleccionados según cada caso.</p>
+          <div class="servicio-precio">$40.000 <span style="font-size:13px;font-weight:600;">online</span></div>
+          <div class="servicio-unit">$45.000 presencial</div>
+          <ul class="servicio-items"><li>3–4 sesiones de evaluación</li><li>Instrumentos formales según cada caso</li><li>Informe psicopedagógico completo</li><li>Reunión con apoderados incluida</li><li>Plan de intervención personalizado</li></ul>
+          <button class="servicio-cta" onclick="showTab('contacto')">📅 Agendar evaluación →</button>
+        </div>
+        <div class="servicio-card">
+          <span class="servicio-icon">🌱</span>
+          <div class="servicio-name">Intervención individual</div>
+          <p class="servicio-desc">Sesiones semanales diseñadas específicamente para este/a niño/a. No hay plantillas. El proceso se ajusta en el tiempo.</p>
+          <div class="servicio-precio">$45.000</div>
+          <div class="servicio-unit">por sesión de 45 min</div>
+          <ul class="servicio-items"><li>Lenguaje y comprensión lectora</li><li>Matemáticas y razonamiento</li><li>Funciones ejecutivas</li><li>Autoestima académica como eje central</li><li>Ajuste continuo del proceso</li></ul>
+          <button class="servicio-cta" onclick="showTab('contacto')">📅 Agendar sesión →</button>
+        </div>
+        <div class="servicio-card sun">
+          <span class="servicio-icon">👫</span>
+          <div class="servicio-name">Sesión en dupla o trío</div>
+          <p class="servicio-desc">2 o 3 niños/as con la misma necesidad. Aprenden juntos/as, se motivan y escalan en equipo.</p>
+          <div class="servicio-precio">$38.000</div>
+          <div class="servicio-unit">por niño/a · sesión de 45 min</div>
+          <ul class="servicio-items"><li>Misma necesidad específica</li><li>Aprendizaje colaborativo entre pares</li><li>Potencia la autoestima grupal</li><li>Requiere evaluación individual previa</li></ul>
+          <button class="servicio-cta" style="background:var(--sun-text);" onclick="showTab('contacto')">💬 Consultar disponibilidad →</button>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="section-tag">⏱️ Cómo funciona la evaluación</div>
+      <h2 style="margin-bottom:8px;">Desde la primera sesión, evaluamos</h2>
+      <p style="font-size:15px;color:var(--muted);margin-bottom:22px;">No hay tiempo de relleno. Cada sesión tiene un objetivo concreto.</p>
+      <div class="proceso-steps">
+        <div class="proceso-step"><div class="proceso-num">0</div><div class="proceso-title">📂 Antes de llegar</div><p class="proceso-desc">Los papás envían antecedentes: informes, diagnósticos, notas del colegio.</p></div>
+        <div class="proceso-step"><div class="proceso-num">1</div><div class="proceso-title">🔍 Sesión 1</div><p class="proceso-desc">Evaluación desde el primer día. Sin reuniones innecesarias.</p></div>
+        <div class="proceso-step"><div class="proceso-num">2–3</div><div class="proceso-title">📊 Sesiones 2–3</div><p class="proceso-desc">Pruebas distribuidas para no sobrecargar al/la niño/a.</p></div>
+        <div class="proceso-step highlight"><div class="proceso-num" style="background:var(--white);color:var(--mint-dark);">✓</div><div class="proceso-title">📋 Informe + reunión</div><p class="proceso-desc">Resultados, plan de acción y próximos pasos.</p></div>
+      </div>
+      <div class="info-box sun"><strong>¿Ya tiene evaluaciones anteriores?</strong> Compártelas antes de comenzar — en muchos casos el proceso se acorta a 1 o 2 sesiones.</div>
+      <div class="info-box sky"><strong>¿Por qué varias sesiones?</strong> Aplicar todo en un día agota al/la niño/a y distorsiona los resultados. Dividirlo da información mucho más fiel.</div>
+    </div>
+  </div>
+  <div class="cta-band">
+    <div class="cta-band-title">¿No sabes por dónde empezar?</div>
+    <p class="cta-band-sub">Siempre comenzamos por la evaluación. La sesión informativa gratuita es el primer paso.</p>
+    <button class="btn-yellow" onclick="showTab('contacto')">📅 Agenda tu sesión informativa gratis</button>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-logo">Miss Tere Psicopedagogía</div><p class="footer-frase">"Aprender es un camino distinto para cada uno/a."</p><p class="footer-firma">— Miss Tere · Chicureo · Vitacura · Las Condes</p></div>
+      <div><div class="footer-links-title">Páginas</div><div class="footer-links"><a onclick="showTab('inicio')">🏠 Inicio</a><a onclick="showTab('sobre-mi')">👩‍🏫 Sobre mí</a><a onclick="showTab('servicios')">🌱 Servicios</a><a onclick="showTab('precios')">💛 Precios</a><a onclick="showTab('contacto')">📩 Contacto</a></div></div>
+      <div><div class="footer-links-title">Contacto</div><div class="footer-links"><a href="https://wa.me/56973306902" target="_blank">💬 WhatsApp</a><a href="mailto:tere.lorca14@gmail.com">✉️ Email</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Miss Tere Psicopedagogía</p><p>Hecho con ❤️</p></div>
+  </footer>
+</div>
+
+<!-- ══ PRECIOS ══ -->
+<div id="tab-precios" class="tab">
+  <div class="page-hero-band sun">
+    <div class="section-tag" style="justify-content:center;color:var(--sun-dark);">💛 Precios</div>
+    <h1>Transparencia total</h1>
+    <p>Acá están los valores de cada servicio y todo lo que incluye — sin sorpresas.</p>
+  </div>
+  <div class="page">
+    <div class="page-inner">
+      <div class="grid-4" style="margin-bottom:32px;">
+        <div class="precio-card">
+          <span class="precio-icon">📄</span>
+          <div class="precio-name">Evaluación online</div>
+          <p class="precio-desc">Informe + reunión por videollamada</p>
+          <div class="precio-num">$40.000</div>
+          <div class="precio-unit">por evaluación completa</div>
+          <ul class="precio-includes"><li>3–4 sesiones de evaluación</li><li>Informe psicopedagógico completo</li><li>Reunión online con apoderados</li><li>Plan de intervención</li></ul>
+        </div>
+        <div class="precio-card featured">
+          <div class="precio-badge">⭐ Más completo</div>
+          <span class="precio-icon">📋</span>
+          <div class="precio-name">Evaluación presencial</div>
+          <p class="precio-desc">Informe + reunión en persona</p>
+          <div class="precio-num">$45.000</div>
+          <div class="precio-unit">por evaluación completa</div>
+          <ul class="precio-includes"><li>Todo lo del informe online</li><li>Reunión presencial · más profundidad</li><li>Informe impreso y explicado</li></ul>
+        </div>
+        <div class="precio-card">
+          <span class="precio-icon">🌱</span>
+          <div class="precio-name">Sesión individual</div>
+          <p class="precio-desc">45 min · 1 o 2 veces por semana</p>
+          <div class="precio-num">$45.000</div>
+          <div class="precio-unit">por sesión</div>
+          <ul class="precio-includes"><li>Plan 100% personalizado</li><li>Autoestima como eje central</li><li>Ajuste continuo</li></ul>
+        </div>
+        <div class="precio-card">
+          <span class="precio-icon">👫</span>
+          <div class="precio-name">Dupla o trío</div>
+          <p class="precio-desc">45 min · misma necesidad</p>
+          <div class="precio-num">$38.000</div>
+          <div class="precio-unit">por niño/a · por sesión</div>
+          <ul class="precio-includes"><li>Misma necesidad específica</li><li>Aprendizaje entre pares</li><li>Requiere evaluación previa</li></ul>
+        </div>
+      </div>
+      <div class="info-box mint"><strong>💡 Invertir en psicopedagogía hoy</strong> es entregarle a tu hijo/a las herramientas que va a usar toda la vida. No estamos hablando solo de mejorar las notas — estamos hablando de que aprenda a aprender y recupere la confianza en sí mismo/a.</div>
+      <div class="divider"></div>
+      <div class="section-tag">❓ Preguntas frecuentes</div>
+      <h2 style="margin-bottom:22px;">Lo que más me preguntan</h2>
+      <div id="faq-container">
+        <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-header"><div class="faq-q"><div class="faq-ico">?</div>¿Cuántas sesiones voy a necesitar?</div><span class="faq-arrow">▾</span></div><p class="faq-a">Depende de cada niño/a y se define después de la evaluación. Los procesos que funcionan son los que se sostienen en el tiempo — la constancia hace la diferencia.</p></div>
+        <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-header"><div class="faq-q"><div class="faq-ico">?</div>¿Se puede comenzar sin hacer la evaluación?</div><span class="faq-arrow">▾</span></div><p class="faq-a">No. La evaluación es el punto de partida — sin ella estaríamos trabajando a ciegas. Es lo que permite que cada sesión tenga un propósito real y medible.</p></div>
+        <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-header"><div class="faq-q"><div class="faq-ico">?</div>¿Cuándo voy a ver resultados?</div><span class="faq-arrow">▾</span></div><p class="faq-a">Los primeros cambios suelen verse en las primeras semanas — especialmente en la actitud hacia el aprendizaje. Los avances más concretos se construyen con la constancia del proceso.</p></div>
+        <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-header"><div class="faq-q"><div class="faq-ico">?</div>¿Tienen descuento si son hermanos/as?</div><span class="faq-arrow">▾</span></div><p class="faq-a">Si tienen necesidades compatibles, pueden hacer sesiones en dupla a $38.000 cada uno/a. Es una muy buena opción cuando el trabajo conjunto tiene sentido pedagógico.</p></div>
+        <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-header"><div class="faq-q"><div class="faq-ico">?</div>¿Se trabaja solo en sesión o también con la familia?</div><span class="faq-arrow">▾</span></div><p class="faq-a">El proceso es colaborativo — trabajo con el/la niño/a, con los apoderados y me coordino con el colegio. Para sacar lo mejor de cada niño/a se necesitan los tres.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-band">
+    <div class="cta-band-title">¿Listo/a para dar el primer paso?</div>
+    <p class="cta-band-sub">La sesión informativa es gratuita y sin compromiso. Solo 15 minutos.</p>
+    <button class="btn-yellow" onclick="showTab('contacto')">📅 Agenda tu sesión informativa gratis</button>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-logo">Miss Tere Psicopedagogía</div><p class="footer-frase">"Aprender es un camino distinto para cada uno/a."</p><p class="footer-firma">— Miss Tere · Chicureo · Vitacura · Las Condes</p></div>
+      <div><div class="footer-links-title">Páginas</div><div class="footer-links"><a onclick="showTab('inicio')">🏠 Inicio</a><a onclick="showTab('sobre-mi')">👩‍🏫 Sobre mí</a><a onclick="showTab('servicios')">🌱 Servicios</a><a onclick="showTab('precios')">💛 Precios</a><a onclick="showTab('contacto')">📩 Contacto</a></div></div>
+      <div><div class="footer-links-title">Contacto</div><div class="footer-links"><a href="https://wa.me/56973306902" target="_blank">💬 WhatsApp</a><a href="mailto:tere.lorca14@gmail.com">✉️ Email</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Miss Tere Psicopedagogía</p><p>Hecho con ❤️</p></div>
+  </footer>
+</div>
+
+<!-- ══ CONTACTO ══ -->
+<div id="tab-contacto" class="tab">
+  <div class="page-hero-band dark">
+    <div class="section-tag" style="justify-content:center;color:var(--sky-mid);">📩 Contacto</div>
+    <h1>¿Damos el primer paso?</h1>
+    <p>La primera conversación es siempre gratuita y sin compromiso.</p>
+  </div>
+  <div class="page">
+    <div class="page-inner">
+      <div class="section-tag">📱 Canales de contacto</div>
+      <h2 style="margin-bottom:22px;">Escríbeme como prefieras</h2>
+      <div class="contacto-cards">
+        <div class="contacto-card">
+          <span class="contacto-icon">💬</span>
+          <div class="contacto-label">WhatsApp</div>
+          <p class="contacto-desc">La forma más rápida. Respondo consultas sobre servicios, disponibilidad y dudas del proceso.</p>
+          <div class="contacto-tel">+56 9 7330 6902</div>
+          <a class="btn-wa" href="https://wa.me/56973306902?text=Hola%20Miss%20Tere%2C%20quiero%20consultar%20sobre%20psicopedagog%C3%ADa" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+        <div class="contacto-card">
+          <span class="contacto-icon">✉️</span>
+          <div class="contacto-label">Email</div>
+          <p class="contacto-desc">Te respondo en menos de 24 horas con toda la información que necesitas.</p>
+          <div class="contacto-tel" style="font-size:14px;">tere.lorca14@gmail.com</div>
+          <a class="btn-sky" href="mailto:tere.lorca14@gmail.com?subject=Consulta%20psicopedagog%C3%ADa">✉️ Enviar email</a>
+        </div>
+        <div class="contacto-card">
+          <span class="contacto-icon">📍</span>
+          <div class="contacto-label">Ubicaciones</div>
+          <p class="contacto-desc">Sesiones presenciales en tres sectores de Santiago.</p>
+          <div style="margin-top:14px;">
+            <div class="ubicacion-item"><div class="ubicacion-title">📍 Chicureo</div><p class="ubicacion-desc">Sector norte de Santiago</p></div>
+            <div class="ubicacion-item"><div class="ubicacion-title">📍 Vitacura</div><p class="ubicacion-desc">Sector oriente de Santiago</p></div>
+            <div class="ubicacion-item"><div class="ubicacion-title">📍 Las Condes</div><p class="ubicacion-desc">Sector oriente de Santiago</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="form-wrap">
+        <div class="section-tag">📋 Formulario de contacto</div>
+        <div class="form-title">Cuéntame sobre tu hijo/a</div>
+        <p class="form-desc">Completa el formulario y te respondo en menos de 24 horas.</p>
+        <form action="https://formsubmit.co/tere.lorca14@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nueva consulta — misstere-psicopedagogia.github.io">
+          <input type="hidden" name="_next" value="https://misstere-psicopedagogia.github.io/">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label">Tu nombre *</label><input class="form-input" type="text" name="nombre" placeholder="¿Cómo te llamas?" required></div>
+            <div class="form-group"><label class="form-label">Nombre y edad del/la niño/a *</label><input class="form-input" type="text" name="nino" placeholder="Ej: Martina, 7 años" required></div>
+            <div class="form-group"><label class="form-label">¿Tiene evaluaciones previas?</label><select class="form-input" name="evaluaciones"><option value="">Selecciona</option><option>Sí, tiene evaluaciones</option><option>No tiene evaluaciones</option><option>No lo sé</option></select></div>
+            <div class="form-group"><label class="form-label">¿Cómo prefieres que te contacte?</label><select class="form-input" name="contacto_pref"><option>WhatsApp</option><option>Email</option></select></div>
+            <div class="form-group full"><label class="form-label">¿En qué necesitas apoyo? *</label><textarea class="form-input" name="mensaje" placeholder="Cuéntame brevemente qué está pasando con tu hijo/a..." required></textarea></div>
+          </div>
+          <button type="submit" class="form-submit">Enviar consulta →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="cta-band">
+    <div class="cta-band-title">¿Prefieres hablar directamente?</div>
+    <p class="cta-band-sub">El WhatsApp es la forma más rápida. Te respondo enseguida.</p>
+    <a class="btn-yellow" href="https://wa.me/56973306902?text=Hola%20Miss%20Tere%2C%20quiero%20consultar%20sobre%20psicopedagog%C3%ADa" target="_blank">💬 Escribir por WhatsApp ahora</a>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div><div class="footer-logo">Miss Tere Psicopedagogía</div><p class="footer-frase">"Aprender es un camino distinto para cada uno/a."</p><p class="footer-firma">— Miss Tere · Chicureo · Vitacura · Las Condes</p></div>
+      <div><div class="footer-links-title">Páginas</div><div class="footer-links"><a onclick="showTab('inicio')">🏠 Inicio</a><a onclick="showTab('sobre-mi')">👩‍🏫 Sobre mí</a><a onclick="showTab('servicios')">🌱 Servicios</a><a onclick="showTab('precios')">💛 Precios</a><a onclick="showTab('contacto')">📩 Contacto</a></div></div>
+      <div><div class="footer-links-title">Contacto directo</div><div class="footer-links"><a href="https://wa.me/56973306902" target="_blank">💬 +56 9 7330 6902</a><a href="mailto:tere.lorca14@gmail.com">✉️ tere.lorca14@gmail.com</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Miss Tere Psicopedagogía</p><p>Hecho con ❤️ para los niños/as</p></div>
+  </footer>
+</div>
+
+<script>
+function showTab(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>{
+    if(b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+name+"'"))b.classList.add('active');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleFaq(el){
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>
